@@ -31,7 +31,7 @@
         .card:hover {
             transform: scale(1.05);
         }
-        .reload-button {
+        .button {
             margin-top: 20px;
             padding: 10px 20px;
             background-color: #5200ff;
@@ -42,7 +42,7 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
-        .reload-button:hover {
+        .button:hover {
             transform: scale(1.1);
         }
     </style>
@@ -56,9 +56,11 @@
         }
 
         window.onload = function() {
-            document.getElementById("art-style").src = `/images/art-style-${getRandomInt(15)}.png`;
-            document.getElementById("artist").src = `/images/artist-${getRandomInt(15)}.png`;
-            document.getElementById("extra-info").src = `/images/extra-info-${getRandomInt(15)}.png`;
+            // Ensure the paths are correct and case-sensitive
+            const basePath = '/images/';
+            document.getElementById("art-style").src = `${basePath}art-style-${getRandomInt(15)}.png`;
+            document.getElementById("artist").src = `${basePath}artist-${getRandomInt(15)}.png`;
+            document.getElementById("extra-info").src = `${basePath}extra-info-${getRandomInt(15)}.png`;
         };
     </script>
 </head>
@@ -73,7 +75,15 @@
     <div class="card">
         <img id="extra-info" alt="Extra Informatie">
     </div>
-    <p> </p>
-    <button class="reload-button" onclick="reloadPage()">Reload</button>
+    <p></p>
+    <button class="button" onclick="reloadPage()">Herlaad de webpagina</button>
+    <p></p>
+    <a href="https://www.robbewulgaert.be/onderwijs/de-chimaera-het-fantastische-monster" target="_blank">
+        <button class="button">Project Chimaera - 10 tot 12 jaar (meer info)</button>
+    </a>
+    <p></p>
+    <a href="https://www.robbewulgaert.be/onderwijs/breng-griekse-mythes-tot-leven-met-ai" target="_blank">
+        <button class="button">Project Griekse Mythes - 13 tot 15 jaar (meer info)</button>
+    </a>
 </body>
 </html>
