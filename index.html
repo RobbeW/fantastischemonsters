@@ -31,16 +31,34 @@
         .card:hover {
             transform: scale(1.05);
         }
+        .reload-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #5200ff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .reload-button:hover {
+            transform: scale(1.1);
+        }
     </style>
     <script>
         function getRandomInt(max) {
             return Math.floor(Math.random() * max) + 1;
         }
 
+        function reloadPage() {
+            location.reload();
+        }
+
         window.onload = function() {
-            document.getElementById("Kunststijl").src = `/images/art-style-${getRandomInt(15)}.png`;
-            document.getElementById("Artiest").src = `/images/artist-${getRandomInt(15)}.png`;
-            document.getElementById("Extra Informatie").src = `/images/extra-info-${getRandomInt(15)}.png`;
+            document.getElementById("art-style").src = `/images/art-style-${getRandomInt(15)}.png`;
+            document.getElementById("artist").src = `/images/artist-${getRandomInt(15)}.png`;
+            document.getElementById("extra-info").src = `/images/extra-info-${getRandomInt(15)}.png`;
         };
     </script>
 </head>
@@ -55,6 +73,6 @@
     <div class="card">
         <img id="extra-info" alt="Extra Informatie">
     </div>
+    <button class="reload-button" onclick="reloadPage()">Reload</button>
 </body>
 </html>
-
