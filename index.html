@@ -15,8 +15,8 @@
         }
         .card {
             display: inline-block;
-            width: 200px;
-            height: 300px;
+            width: 640px;  /* Magic: The Gathering card width (scaled) */
+            height: 896px; /* Magic: The Gathering card height (scaled) */
             margin: 20px;
             border: 2px solid #5200ff;
             border-radius: 10px;
@@ -25,8 +25,8 @@
             transition: transform 0.3s;
         }
         .card img {
-            width: 100%;
-            height: auto;
+            width: 100%;  /* Keeps the proportions */
+            height: auto; /* Ensures the aspect ratio remains intact */
         }
         .card:hover {
             transform: scale(1.05);
@@ -55,12 +55,18 @@
             location.reload();
         }
 
+        function getImageURL(folder, number) {
+            return `https://github.com/RobbeW/fantastischemonsters/blob/main/images/${folder}-${number}.png?raw=true`;
+        }
+
         window.onload = function() {
-            // Ensure the paths are correct and case-sensitive
-            const basePath = '/images/';
-            document.getElementById("art-style").src = `${basePath}art-style-${getRandomInt(15)}.png`;
-            document.getElementById("artist").src = `${basePath}artist-${getRandomInt(15)}.png`;
-            document.getElementById("extra-info").src = `${basePath}extra-info-${getRandomInt(15)}.png`;
+            const artStyleNumber = getRandomInt(15);
+            const artistNumber = getRandomInt(15);
+            const extraInfoNumber = getRandomInt(15);
+
+            document.getElementById("art-style").src = getImageURL("art-style", artStyleNumber);
+            document.getElementById("artist").src = getImageURL("artist", artistNumber);
+            document.getElementById("extra-info").src = getImageURL("extra-info", extraInfoNumber);
         };
     </script>
 </head>
