@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grieks & AI - Fantastische Monsters</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #5200ff;
+        }
+        .card {
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            margin: 20px;
+            border: 2px solid #5200ff;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #3dffd0;
+            transition: transform 0.3s;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+
+        window.onload = function() {
+            document.getElementById("Kunststijl").src = `/images/art-style-${getRandomInt(15)}.png`;
+            document.getElementById("Artiest").src = `/images/artist-${getRandomInt(15)}.png`;
+            document.getElementById("Extra Informatie").src = `/images/extra-info-${getRandomInt(15)}.png`;
+        };
+    </script>
+</head>
+<body>
+    <h1>Grieks & AI - Fantastische Monsters</h1>
+    <div class="card">
+        <img id="art-style" alt="Kunststijl">
+    </div>
+    <div class="card">
+        <img id="artist" alt="Artiest">
+    </div>
+    <div class="card">
+        <img id="extra-info" alt="Extra Informatie">
+    </div>
+</body>
+</html>
+
